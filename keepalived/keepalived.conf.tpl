@@ -13,7 +13,7 @@ vrrp_instance VI_1 {
     state K8SHA_KA_STATE
     interface K8SHA_KA_INTF
     mcast_src_ip K8SHA_IPLOCAL
-    virtual_router_id 51
+    virtual_router_id 31
     priority K8SHA_KA_PRIO
     advert_int 5
     authentication {

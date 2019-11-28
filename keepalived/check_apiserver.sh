@@ -17,6 +17,7 @@ done
 
 if [[ $err != "0" ]]; then
     # if apiserver is down send SIG=1
+    /usr/sbin/systemctl stop keepalived
     echo 'apiserver error!'
     exit 1
 else

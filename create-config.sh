@@ -38,7 +38,7 @@ export K8SHA_NETINF2=enp0s3
 export K8SHA_NETINF3=enp0s3
 
 # keepalived auth_pass config
-export K8SHA_KEEPALIVED_AUTH=412f7dc3bfed32194d1600c483e10ad1d
+export K8SHA_KEEPALIVED_AUTH=3012dc3bfed32194d1600c48e10ace4r
 
 # calico reachable ip address
 export K8SHA_CALICO_REACHABLE_IP=172.20.10.1
