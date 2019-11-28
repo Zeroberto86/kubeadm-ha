@@ -1,0 +1,65 @@
+{
+  "clusters": [
+    {
+      "nodes": [
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "oais-sds-01"
+              ],
+              "storage": [
+                "172.20.238.197"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            {
+              "name": "/dev/vda",
+              "destroydata": true
+            }
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "oais-sds-02"
+              ],
+              "storage": [
+                "172.20.238.198"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            {
+              "name": "/dev/vda",
+              "destroydata": true
+            }
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "oais-sds-03"
+              ],
+              "storage": [
+                "172.20.238.199"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            {
+              "name": "/dev/vda",
+              "destroydata": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

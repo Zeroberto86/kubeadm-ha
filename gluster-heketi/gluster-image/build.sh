@@ -1,0 +1,1 @@
+docker build -t toreshonda/gluster-centos:v6.1 -f Dockerfile-gluster-Daemonset .

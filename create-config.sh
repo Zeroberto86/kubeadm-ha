@@ -146,6 +146,16 @@ calico/calico.yaml.tpl > calico/calico.yaml
 
 echo "create calico.yaml file success. calico/calico.yaml"
 
+# create ingress-controller service-nodeport.yaml
+sed \
+-e "s/K8SHA_VIP/$K8SHA_VIP/g" \
+-e "s/K8SHA_IP1/$K8SHA_IP1/g" \
+-e "s/K8SHA_IP2/$K8SHA_IP2/g" \
+-e "s/K8SHA_IP3/$K8SHA_IP3/g" \
+kubernetes-ingress-nginx/service-nodeport.yaml.tpl > kubernetes-ingress-nginx/service-nodeport.yaml
+
+echo "create service-nodeport.yaml file success. kubernetes-ingress-nginx/service-nodeport.yaml"
+
 scp -r config/$K8SHA_HOST1/nginx-lb root@$K8SHA_HOST1:/root/
 scp -r config/$K8SHA_HOST2/nginx-lb root@$K8SHA_HOST2:/root/
 scp -r config/$K8SHA_HOST3/nginx-lb root@$K8SHA_HOST3:/root/

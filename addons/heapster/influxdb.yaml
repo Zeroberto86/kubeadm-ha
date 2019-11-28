@@ -17,7 +17,10 @@ spec:
         app: kube-system
       containers:
       - name: influxdb
-        image: k8s.gcr.io/heapster-influxdb-amd64:v1.5.2-fixed
+        image: k8s.gcr.io/heapster-influxdb-amd64:v1.5.2
+        env:
+        - name: INFLUXDB_BIND_ADDRESS
+          value: 127.0.0.1:8080
         volumeMounts:
         - mountPath: /data
           name: influxdb-storage
