@@ -1,23 +1,25 @@
 apiVersion: kubeadm.k8s.io/v1beta1
 kind: ClusterConfiguration
-kubernetesVersion: v1.15.6
+kubernetesVersion: stable
 controllerManager:
-  ExtraArgs:
-    horizontal-pod-autoscaler-use-rest-clients: true
+  extraArgs:    
     horizontal-pod-autoscaler-cpu-initialization-period: "20s"
     horizontal-pod-autoscaler-downscale-stabilization: "3m"
     node-monitor-grace-period: "15s"
     pod-eviction-timeout: "30s"
     node-monitor-period: "3s"
-apiServerCertSANs:
-- K8SHA_HOST1
-- K8SHA_HOST2
-- K8SHA_HOST3
-- K8SHA_VHOST
-- K8SHA_IP1
-- K8SHA_IP2
-- K8SHA_IP3
-- K8SHA_VIP
+apiServer:
+  extraArgs:
+    apiserver-count: "3"
+  certSANs:
+  - "K8SHA_HOST1"
+  - "K8SHA_HOST2"
+  - "K8SHA_HOST3"
+  - "K8SHA_VHOST"
+  - "K8SHA_IP1"
+  - "K8SHA_IP2"
+  - "K8SHA_IP3"
+  - "K8SHA_VIP"
 controlPlaneEndpoint: "K8SHA_VIP:16443"
 networking:
   # This CIDR is a Calico default. Substitute or remove for your CNI provider.
