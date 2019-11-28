@@ -8,12 +8,14 @@ metadata:
   annotations:
    description: Exposes Heketi Service
 spec:
+  type: NodePort
   selector:
     name: deploy-heketi
   ports:
   - name: deploy-heketi
     port: 8080
     targetPort: 8080
+    nodePort: 30880
 ---
 kind: Deployment
 apiVersion: apps/v1
